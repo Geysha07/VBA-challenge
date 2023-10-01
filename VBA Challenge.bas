@@ -59,28 +59,26 @@ Dim ws As Worksheet
                 ws.Range("J" & summary_table_row) = yearly_change
                 ws.Range("K" & summary_table_row) = percentage_change
                 ws.Range("L" & summary_table_row) = total_stock_volume
+          
             'Highlight cells in yearly change and percent change green if positive or red if negative
         
             If Cells(summary_table_row, 10).Value > 0 Then
                 Cells(summary_table_row, 10).Interior.ColorIndex = 4
                 
-                
             ElseIf Cells(summary_table_row, 10).Value < 0 Then
                 Cells(summary_table_row, 10).Interior.ColorIndex = 3
                 
-        
             End If
             
             If Cells(summary_table_row, 11).Value > 0 Then
                 Cells(summary_table_row, 11).Interior.ColorIndex = 4
                 
-                
             ElseIf Cells(summary_table_row, 11).Value < 0 Then
                 Cells(summary_table_row, 11).Interior.ColorIndex = 3
                 
-        
             End If
-                 'Add a new row to summary table
+                 
+                'Add a new row to summary table
                 
                 summary_table_row = summary_table_row + 1
                 
@@ -97,16 +95,11 @@ Dim ws As Worksheet
             Else: ws.Cells(i, 1).Value = ws.Cells(i + 1, 1).Value
             total_stock_volume = total_stock_volume + ws.Cells(i, 7).Value
             
-            
             End If
             
-           
-          
-        
         'Move to next row
         
         Next i
-        
         
     'Find value and ticker ID of ticker with the greatest % increase
     
